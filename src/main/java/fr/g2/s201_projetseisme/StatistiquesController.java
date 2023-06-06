@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AccueilController implements Initializable {
+public class StatistiquesController implements Initializable {
 
     @FXML
     public void mapButtonClicked() throws IOException {
