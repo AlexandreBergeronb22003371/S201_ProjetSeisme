@@ -15,9 +15,9 @@
             <children>
                 <HBox alignment="CENTER" prefHeight="60.0" prefWidth="600.0" spacing="100.0" style="-fx-background-color: #8CF3FF;">
                     <children>
-                        <HBox alignment="CENTER" style="-fx-background-color: #34EAFF; -fx-border-color: grey;">
+                        <HBox fx:id="accueilHbox" alignment="CENTER" style="-fx-background-color: #34EAFF; -fx-border-color: grey;">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#accueilButtonClicked" prefHeight="38.0" prefWidth="77.0" style="-fx-background-color: #34EAFF;" text="Accueil" textAlignment="CENTER">
+                                <Button fx:id="accueilButton" mnemonicParsing="false" onAction="#accueilButtonClicked" onMouseEntered="#mouseEnterAccueil" onMouseExited="#mouseExitAccueil" prefHeight="38.0" prefWidth="77.0" style="-fx-background-color: #34EAFF;" text="Accueil" textAlignment="CENTER">
                                     <font>
                                         <Font size="16.0" />
                                     </font>
@@ -25,7 +25,7 @@
                                         <Insets left="2.0" />
                                     </HBox.margin>
                                 </Button>
-                                <ImageView fitHeight="22.0" fitWidth="34.0" onMouseClicked="#accueilButtonClicked" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="22.0" fitWidth="34.0" onMouseClicked="#accueilButtonClicked" onMouseEntered="#mouseEnterAccueil" onMouseExited="#mouseExitAccueil" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@home.png" />
                                     </image>
@@ -35,9 +35,9 @@
                                 </ImageView>
                             </children>
                         </HBox>
-                        <HBox alignment="CENTER" style="-fx-background-color: #34EAFF; -fx-border-color: grey;">
+                        <HBox fx:id="statistiquesHbox" alignment="CENTER" style="-fx-background-color: #34EAFF; -fx-border-color: grey;">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#statsButtonClicked" style="-fx-background-color: #34EAFF;" text="Statistiques" textAlignment="CENTER">
+                                <Button id="statistiquesButton" fx:id="statistiquesButton" mnemonicParsing="false" onAction="#statsButtonClicked" onMouseEntered="#mouseEnterStatistiques" onMouseExited="#mouseExitStatistiques" style="-fx-background-color: #34EAFF;" text="Statistiques" textAlignment="CENTER">
                                     <font>
                                         <Font size="16.0" />
                                     </font>
@@ -45,7 +45,7 @@
                                         <Insets left="2.0" />
                                     </HBox.margin>
                                 </Button>
-                                <ImageView fitHeight="29.0" fitWidth="23.0" onMouseClicked="#statsButtonClicked" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="29.0" fitWidth="23.0" onMouseClicked="#statsButtonClicked" onMouseEntered="#mouseEnterStatistiques" onMouseExited="#mouseExitStatistiques" pickOnBounds="true" preserveRatio="true">
                                     <HBox.margin>
                                         <Insets right="10.0" />
                                     </HBox.margin>
@@ -54,9 +54,9 @@
                                     </image></ImageView>
                             </children>
                         </HBox>
-                        <HBox alignment="CENTER" style="-fx-background-color: #34EAFF; -fx-border-color: grey;">
+                        <HBox fx:id="mapHbox" alignment="CENTER" style="-fx-background-color: #34EAFF; -fx-border-color: grey;">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#mapButtonClicked" style="-fx-background-color: #34EAFF;" text="Map" textAlignment="CENTER">
+                                <Button id="mapButton" fx:id="mapButton" mnemonicParsing="false" onAction="#mapButtonClicked" onMouseEntered="#mouseEnterMap" onMouseExited="#mouseExitMap" style="-fx-background-color: #34EAFF;" text="Map" textAlignment="CENTER">
                                     <font>
                                         <Font size="16.0" />
                                     </font>
@@ -64,7 +64,7 @@
                                         <Insets left="2.0" />
                                     </HBox.margin>
                                 </Button>
-                                <ImageView fitHeight="27.0" fitWidth="23.0" onMouseClicked="#mapButtonClicked" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="27.0" fitWidth="23.0" onMouseClicked="#mapButtonClicked" onMouseEntered="#mouseEnterMap" onMouseExited="#mouseExitMap" pickOnBounds="true" preserveRatio="true">
                                     <HBox.margin>
                                         <Insets right="10.0" />
                                     </HBox.margin>
