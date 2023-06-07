@@ -114,35 +114,35 @@
                   </HBox>
                </children>
                <padding>
-                  <Insets top="30.0" />
+                  <Insets top="20.0" />
                </padding>
             </HBox>
             <HBox alignment="CENTER">
-               <children>
-                  <BarChart fx:id="barChart" title="Titre :">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" />
-                    </yAxis>
-                  </BarChart>
-               </children>
                <padding>
-                  <Insets top="10.0" />
+                  <Insets top="20.0" />
                </padding>
-            </HBox>
-            <HBox>
                <children>
-                  <PieChart fx:id="pieChart" title="Titre :" />
-                  <LineChart fx:id="lineChart" title="Titre :">
+                  <LineChart fx:id="lineChart" animated="false" title="Nombre de séismes par années (villes)">
                     <xAxis>
-                      <CategoryAxis side="BOTTOM" />
+                      <CategoryAxis fx:id="lineChartXAxis" label="Années" side="BOTTOM" />
                     </xAxis>
                     <yAxis>
-                      <NumberAxis side="LEFT" />
+                      <NumberAxis fx:id="lineChartYAxis" label="Séismes" side="LEFT" />
                     </yAxis>
                   </LineChart>
+               </children>
+            </HBox>
+            <HBox spacing="10.0">
+               <children>
+                  <PieChart fx:id="pieChart" animated="false" legendVisible="false" title="Nombre de séismes par années" />
+                  <BarChart fx:id="barChart" animated="false" legendVisible="false" title="Nombre de séismes par villes">
+                    <xAxis>
+                      <CategoryAxis fx:id="barChartXAxis" label="Villes" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="barChartYAxis" label="Séismes" side="LEFT" />
+                    </yAxis>
+                  </BarChart>
                </children>
             </HBox>
          </children>
