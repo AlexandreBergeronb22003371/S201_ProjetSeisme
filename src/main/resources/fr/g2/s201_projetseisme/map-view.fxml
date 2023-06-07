@@ -17,7 +17,7 @@
                     <children>
                         <HBox fx:id="accueilHbox" alignment="CENTER" style="-fx-background-color: #34EAFF; -fx-border-color: grey;">
                             <children>
-                                <Button fx:id="accueilButton" mnemonicParsing="false" onAction="#accueilButtonClicked" onMouseEntered="#mouseEnterAccueil" onMouseExited="#mouseExitAccueil" prefHeight="38.0" prefWidth="77.0" style="-fx-background-color: #34EAFF;" text="Accueil" textAlignment="CENTER">
+                                <Button fx:id="accueilButton" mnemonicParsing="false" onAction="#accueilButtonClicked" onMouseEntered="#mouseEnterAccueil" onMouseExited="#mouseExitAccueil" style="-fx-background-color: #34EAFF;" text="Accueil" textAlignment="CENTER">
                                     <font>
                                         <Font size="16.0" />
                                     </font>
