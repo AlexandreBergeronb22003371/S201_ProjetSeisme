@@ -19,6 +19,10 @@ public class AccueilController extends Controller implements Initializable {
 
     @FXML
     Button importButton;
+
+    @FXML
+    Label pathLabel;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
@@ -32,6 +36,8 @@ public class AccueilController extends Controller implements Initializable {
 
         if (selectedFile != null) {
             System.out.println("Fichier sélectionné : " + selectedFile.getAbsolutePath());
+            pathLabel.setText(" " + selectedFile.getAbsolutePath());
+            pathLabel.setStyle("-fx-text-fill: green");
             try (BufferedReader reader = new BufferedReader(new FileReader(selectedFile))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
@@ -42,6 +48,8 @@ public class AccueilController extends Controller implements Initializable {
             }
         } else {
             System.out.println("Aucun fichier sélectionné.");
+            pathLabel.setText(" aucun");
+            pathLabel.setStyle("-fx-text-fill: red");
         }
     }
 }
