@@ -52,37 +52,37 @@ public class Controller {
 
     @FXML
     public void mouseEnterAccueil() {
-        accueilHbox.setStyle("-fx-background-color: #A2F5FF; -fx-border-color: grey;");
-        accueilButton.setStyle("-fx-background-color: #A2F5FF");
+        accueilHbox.setStyle("-fx-background-color:  #E8A97E; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10");
+        accueilButton.setStyle("-fx-background-color: #E8A97E");
     }
 
     @FXML
     public void mouseExitAccueil() {
-        accueilHbox.setStyle("-fx-background-color: #34EAFF; -fx-border-color: grey;");
-        accueilButton.setStyle("-fx-background-color: #34EAFF");
+        accueilHbox.setStyle("-fx-background-color:  #DB854B; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10");
+        accueilButton.setStyle("-fx-background-color:  #DB854B");
     }
 
     @FXML
     public void mouseEnterStatistiques() {
-        statistiquesHbox.setStyle("-fx-background-color: #A2F5FF; -fx-border-color: grey;");
-        statistiquesButton.setStyle("-fx-background-color: #A2F5FF");
+        statistiquesHbox.setStyle("-fx-background-color:  #E8A97E; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10");
+        statistiquesButton.setStyle("-fx-background-color: #E8A97E");
     }
 
     @FXML
     public void mouseExitStatistiques() {
-        statistiquesHbox.setStyle("-fx-background-color: #34EAFF; -fx-border-color: grey;");
-        statistiquesButton.setStyle("-fx-background-color: #34EAFF");
+        statistiquesHbox.setStyle("-fx-background-color:  #DB854B; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10");
+        statistiquesButton.setStyle("-fx-background-color:  #DB854B");
     }
 
     @FXML
     public void mouseEnterMap() {
-        mapHbox.setStyle("-fx-background-color: #A2F5FF; -fx-border-color: grey;");
-        mapButton.setStyle("-fx-background-color: #A2F5FF");
+        mapHbox.setStyle("-fx-background-color:  #E8A97E; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10");
+        mapButton.setStyle("-fx-background-color: #E8A97E");
     }
 
     @FXML
     public void mouseExitMap() {
-        mapHbox.setStyle("-fx-background-color: #34EAFF; -fx-border-color: grey;");
-        mapButton.setStyle("-fx-background-color: #34EAFF");
+        mapHbox.setStyle("-fx-background-color:  #DB854B; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10");
+        mapButton.setStyle("-fx-background-color:  #DB854B");
     }
 }

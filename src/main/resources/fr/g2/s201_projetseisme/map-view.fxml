@@ -13,11 +13,11 @@
     <top>
         <VBox prefHeight="47.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>
-                <HBox alignment="CENTER" prefHeight="60.0" prefWidth="600.0" spacing="100.0" style="-fx-background-color: #8CF3FF;">
+                <HBox alignment="CENTER" prefHeight="60.0" prefWidth="600.0" spacing="100.0" style="-fx-background-color: #B06B3D;">
                     <children>
-                        <HBox fx:id="accueilHbox" alignment="CENTER" style="-fx-background-color: #34EAFF; -fx-border-color: grey;">
+                        <HBox fx:id="accueilHbox" alignment="CENTER" style="-fx-border-color: black; -fx-border-radius: 10; -fx-background-color: #DB854B; -fx-background-radius: 10;">
                             <children>
-                                <Button fx:id="accueilButton" mnemonicParsing="false" onAction="#accueilButtonClicked" onMouseEntered="#mouseEnterAccueil" onMouseExited="#mouseExitAccueil" style="-fx-background-color: #34EAFF;" text="Accueil" textAlignment="CENTER">
+                                <Button fx:id="accueilButton" mnemonicParsing="false" onAction="#accueilButtonClicked" onMouseEntered="#mouseEnterAccueil" onMouseExited="#mouseExitAccueil" style="-fx-background-color: #DB854B;" text="Accueil" textAlignment="CENTER">
                                     <font>
                                         <Font size="16.0" />
                                     </font>
@@ -35,9 +35,9 @@
                                 </ImageView>
                             </children>
                         </HBox>
-                        <HBox fx:id="statistiquesHbox" alignment="CENTER" style="-fx-background-color: #34EAFF; -fx-border-color: grey;">
+                        <HBox fx:id="statistiquesHbox" alignment="CENTER" style="-fx-background-color: #DB854B; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10;">
                             <children>
-                                <Button id="statistiquesButton" fx:id="statistiquesButton" mnemonicParsing="false" onAction="#statsButtonClicked" onMouseEntered="#mouseEnterStatistiques" onMouseExited="#mouseExitStatistiques" style="-fx-background-color: #34EAFF;" text="Statistiques" textAlignment="CENTER">
+                                <Button id="statistiquesButton" fx:id="statistiquesButton" mnemonicParsing="false" onAction="#statsButtonClicked" onMouseEntered="#mouseEnterStatistiques" onMouseExited="#mouseExitStatistiques" style="-fx-background-color: #DB854B;" text="Statistiques" textAlignment="CENTER">
                                     <font>
                                         <Font size="16.0" />
                                     </font>
@@ -54,9 +54,9 @@
                                     </image></ImageView>
                             </children>
                         </HBox>
-                        <HBox fx:id="mapHbox" alignment="CENTER" style="-fx-background-color: #34EAFF; -fx-border-color: grey;">
+                        <HBox fx:id="mapHbox" alignment="CENTER" style="-fx-background-color: #DB854B; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10;">
                             <children>
-                                <Button id="mapButton" fx:id="mapButton" mnemonicParsing="false" onAction="#mapButtonClicked" onMouseEntered="#mouseEnterMap" onMouseExited="#mouseExitMap" style="-fx-background-color: #34EAFF;" text="Map" textAlignment="CENTER">
+                                <Button id="mapButton" fx:id="mapButton" mnemonicParsing="false" onAction="#mapButtonClicked" onMouseEntered="#mouseEnterMap" onMouseExited="#mouseExitMap" style="-fx-background-color: #DB854B;" text="Map" textAlignment="CENTER">
                                     <font>
                                         <Font size="16.0" />
                                     </font>
