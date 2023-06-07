@@ -105,7 +105,7 @@
                   </HBox>
                   <HBox alignment="CENTER">
                      <children>
-                        <Label prefHeight="18.0" prefWidth="177.0" text="Sélectionnez la ville :" />
+                        <Label prefHeight="18.0" prefWidth="196.0" text="Sélectionnez la région :" />
                         <ChoiceBox prefWidth="150.0" />
                      </children>
                      <padding>
