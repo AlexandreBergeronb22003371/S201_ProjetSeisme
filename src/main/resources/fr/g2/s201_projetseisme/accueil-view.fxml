@@ -8,7 +8,10 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.g2.s201_projetseisme.AccueilController">
    <center>
-      <Label fx:id="centreLabel" text="KAMA Séisme" BorderPane.alignment="CENTER" />
+      <Label fx:id="centreLabel" text="KAMA Séisme" BorderPane.alignment="CENTER">
+         <graphic>
+            <Button fx:id="importButton" mnemonicParsing="false" onAction="#chooseFile" text="Selectionner" />
+         </graphic></Label>
    </center>
    <top>
       <VBox prefHeight="47.0" prefWidth="600.0" BorderPane.alignment="CENTER">

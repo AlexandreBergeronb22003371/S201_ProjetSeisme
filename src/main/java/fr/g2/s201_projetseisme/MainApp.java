@@ -19,7 +19,7 @@ public class MainApp extends Application {
         scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setTitle("KAMA Séisme App");
         stage.setScene(scene);
-        this.stage = stage;
+        MainApp.stage = stage;
         stage.show();
     }
 
