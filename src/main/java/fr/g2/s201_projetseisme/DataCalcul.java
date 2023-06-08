@@ -138,4 +138,67 @@ public class DataCalcul {
         }
         return barChartData;
     }
+
+
+    public static ArrayList<XYChart.Series<String, Float>> initLineChartDatas(ArrayList<ArrayList<String>> data) {
+
+        ArrayList<XYChart.Series<String, Float>> lineChartDatas = new ArrayList<XYChart.Series<String, Float>>();
+        ArrayList<String> regionList = new ArrayList<String>();
+        ArrayList<String> distinctRegionList = new ArrayList<String>();
+
+        for (int i = 1; i < data.size(); ++i) {
+            String tempData = data.get(i).get(DataSorter.regionColumnIndex);
+            if (tempData.length() < 10) {
+                regionList.add(tempData);
+            } else {
+                tempData = tempData.substring(0, 10);
+                regionList.add(tempData);
+            }
+        }
+        for (String str : regionList) {
+            if (!(distinctRegionList.contains(str))) {
+                distinctRegionList.add(str);
+            }
+        }
+
+        for (String str : distinctRegionList) {
+
+
+            XYChart.Series<String, Float> lineChartData = new XYChart.Series<>();
+            ArrayList<String> dateList = new ArrayList<String>();
+            ArrayList<String> distinctDateList = new ArrayList<String>();
+            ArrayList<Integer> countList = new ArrayList<Integer>();
+
+            for (int i = 1; i < data.size(); ++i) {
+                String tempDateComplete = data.get(i).get(DataSorter.dateColumnIndex);
+                String[] tempArr = tempDateComplete.split("/");
+                String tempDate = tempArr[0];
+                if (data.get(i).get(DataSorter.regionColumnIndex).equals(str)) {
+                    dateList.add(tempDate);
+                }
+            }
+            for (String string : dateList) {
+                if (!(distinctDateList.contains(string))) {
+                    distinctDateList.add(string);
+                }
+            }
+            for (String string : distinctDateList) {
+                countList.add(0);
+            }
+            for (int i = 0; i < distinctDateList.size(); ++i) {
+                for (String string : dateList) {
+                    if (string.equals(distinctDateList.get(i))) {
+                        int tempInt = countList.get(i);
+                        countList.set(i, tempInt + 1);
+                    }
+                }
+            }
+            for (int i = 0 ; i < distinctDateList.size() ; ++i) {
+                lineChartData.getData().add(new XYChart.Data(distinctDateList.get(i), countList.get(i)));
+            }
+            lineChartData.setName(str);
+            lineChartDatas.add(lineChartData);
+        }
+        return lineChartDatas;
+    }
 }

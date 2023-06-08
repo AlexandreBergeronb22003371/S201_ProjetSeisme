@@ -60,7 +60,15 @@ public class StatistiquesController extends Controller implements Initializable 
 
         //Initialization du BarChart
         barChartData = DataCalcul.initBarChartData(sortedData);
+        barChart.getData().clear();
         barChart.getData().add(barChartData);
+
+        //Initialization du LineChart
+        ArrayList<XYChart.Series<String, Float>> lineChartDatas = DataCalcul.initLineChartDatas(sortedData);
+        lineChart.getData().clear();
+        for (int i = 0 ; i < lineChartDatas.size() ; ++i) {
+            lineChart.getData().add(lineChartDatas.get(i));
+        }
     }
 
     @Override
@@ -96,38 +104,18 @@ public class StatistiquesController extends Controller implements Initializable 
 
                 //Initialization du BarChart
                 barChartData = DataCalcul.initBarChartData(sortedData);
+                barChart.getData().clear();
                 barChart.getData().add(barChartData);
 
+                //Initialization du LineChart
+                ArrayList<XYChart.Series<String, Float>> lineChartDatas = DataCalcul.initLineChartDatas(sortedData);
+                lineChart.getData().clear();
+                for (int i = 0 ; i < lineChartDatas.size() ; ++i) {
+                    lineChart.getData().add(lineChartDatas.get(i));
+                }
             }
 
 
         }
-
-        //Exemple de remplissage du barChart
-        //barChartData = new XYChart.Series<>();
-        //barChartData.getData().add(new XYChart.Data("Ville 1",10));
-        //barChartData.getData().add(new XYChart.Data("Ville 2",10));
-        //barChartData.getData().add(new XYChart.Data("Ville 3",10));
-        //barChart.getData().add(barChartData);
-
-
-
-        //Exemple de remplissage du lineChart
-        XYChart.Series<String, Float> lineChartData1 = new XYChart.Series<>();
-        XYChart.Series<String, Float> lineChartData2 = new XYChart.Series<>();
-        XYChart.Series<String, Float> lineChartData3 = new XYChart.Series<>();
-        lineChartData1.getData().add(new XYChart.Data("2000",10));
-        lineChartData1.getData().add(new XYChart.Data("2001",20));
-        lineChartData1.getData().add(new XYChart.Data("2002",10));
-        lineChartData2.getData().add(new XYChart.Data("2000",20));
-        lineChartData2.getData().add(new XYChart.Data("2001",10));
-        lineChartData2.getData().add(new XYChart.Data("2002",20));
-        lineChartData3.getData().add(new XYChart.Data("2000",5));
-        lineChartData3.getData().add(new XYChart.Data("2001",10));
-        lineChartData3.getData().add(new XYChart.Data("2002",15));
-        lineChartData1.setName("Ville 1");
-        lineChartData2.setName("Ville 2");
-        lineChartData3.setName("Ville 3");
-        lineChart.getData().addAll(lineChartData1, lineChartData2, lineChartData3);
     }
 }
