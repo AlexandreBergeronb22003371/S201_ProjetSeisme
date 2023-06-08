@@ -88,13 +88,13 @@
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
                <children>
                   <Label text="Fichier sélectionné :">
                      <font>
                         <Font size="15.0" />
                      </font></Label>
-                  <Label fx:id="pathLabel" text=" aucun" textFill="RED">
+                  <Label fx:id="pathLabel" alignment="CENTER" contentDisplay="CENTER" prefWidth="108.0" text="aucun" textFill="RED">
                      <font>
                         <Font size="15.0" />
                      </font></Label>
