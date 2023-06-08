@@ -8,18 +8,20 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class StatistiquesController extends Controller implements Initializable {
 
     //Choice Boxes
-
-
+    @FXML
+    private ChoiceBox<String> periodChoiceBox;
 
     //barChart
     @FXML
@@ -47,6 +49,21 @@ public class StatistiquesController extends Controller implements Initializable 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+
+        if (DataSorter.data != null) {
+
+            //Initialization des ChoiceBoxes
+            ArrayList<String> periodChoiceBoxList = new ArrayList<String>();
+            periodChoiceBoxList = DataCalcul.initChoiceBoxItems(DataSorter.data);
+            for (String str : periodChoiceBoxList) {
+                periodChoiceBox.getItems().add(str);
+            }
+
+            //Initialization du PieChart
+            pieChartData = DataCalcul.initPieChartData(DataSorter.data);
+            pieChart.setData(pieChartData);
+        }
+
         //Exemple de remplissage du barChart
         barChartData = new XYChart.Series<>();
         barChartData.getData().add(new XYChart.Data("Ville 1",10));
@@ -60,8 +77,7 @@ public class StatistiquesController extends Controller implements Initializable 
         //        new PieChart.Data("2001", 10),
         //        new PieChart.Data("2002", 10)
         //);
-        pieChartData = DataCalcul.initPieChartData(DataSorter.data);
-        pieChart.setData(pieChartData);
+
 
         //Exemple de remplissage du lineChart
         XYChart.Series<String, Float> lineChartData1 = new XYChart.Series<>();
