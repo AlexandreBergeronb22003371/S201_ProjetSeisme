@@ -58,14 +58,22 @@ public class AccueilController extends Controller implements Initializable {
                 String line;
                 String[] tempArr;
                 String delimiter = ",";
-                ArrayList<String> insideArr = new ArrayList<String>();
                 while ((line = reader.readLine()) != null) {
                     tempArr = line.split(delimiter);
+                    ArrayList<String> tempInsideArr = new ArrayList<String>();
                     for (String tempStr : tempArr) {
-                        insideArr.add(tempStr);
+                        tempInsideArr.add(tempStr);
                     }
-                    data.add(insideArr);
+                    data.add(tempInsideArr);
                 }
+
+                //Initialisation des index importants
+
+                DataSorter.initDateColumnIndex(data);
+                DataSorter.initRegionColumnIndex(data);
+                DataSorter.initLatitudeColumnIndex(data);
+                DataSorter.initLongitudeColumnIndex(data);
+
             } catch (IOException e) {
                 System.out.println("Erreur lors de la lecture du fichier : " + e.getMessage());
             }
