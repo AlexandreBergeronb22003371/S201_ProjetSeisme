@@ -74,6 +74,7 @@ public class AccueilController extends Controller implements Initializable {
             System.out.println("Aucun fichier sélectionné.");
             pathLabel.setText(pathString);
             pathLabel.setStyle("-fx-text-fill: red");
+            data.clear();
         }
     }
 }
