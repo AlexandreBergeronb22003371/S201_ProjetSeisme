@@ -5,11 +5,17 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.layout.VBox?>
+<?import com.gluonhq.maps.MapView?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.g2.s201_projetseisme.MapController">
-    <center>
-        <Label fx:id="centreLabel" text="Map" BorderPane.alignment="CENTER" />
-    </center>
+    <left>
+        <VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:id="vbox">
+            <children>
+                <MapView fx:id="mapView" prefWidth="640" prefHeight="480" />
+            </children>
+        </VBox>
+    </left>
     <top>
         <VBox prefHeight="47.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>
