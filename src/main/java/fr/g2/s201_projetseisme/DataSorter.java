@@ -1,6 +1,9 @@
 package fr.g2.s201_projetseisme;
 
+import javafx.scene.chart.XYChart;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class DataSorter {
 

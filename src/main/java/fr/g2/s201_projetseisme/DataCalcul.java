@@ -7,6 +7,8 @@ import javafx.scene.chart.XYChart;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class DataCalcul {
 
@@ -196,6 +198,7 @@ public class DataCalcul {
             for (int i = 0 ; i < distinctDateList.size() ; ++i) {
                 lineChartData.getData().add(new XYChart.Data(distinctDateList.get(i), countList.get(i)));
             }
+
             lineChartData.setName(str);
             lineChartDatas.add(lineChartData);
         }
