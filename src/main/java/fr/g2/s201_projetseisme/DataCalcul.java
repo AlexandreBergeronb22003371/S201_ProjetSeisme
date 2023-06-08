@@ -76,4 +76,28 @@ public class DataCalcul {
         return choiceBoxItems;
     }
 
+    public static ArrayList<ArrayList<String>> initDataBetween(ArrayList<ArrayList<String>> data, String date1, String date2) {
+        ArrayList<ArrayList<String>> newData = new ArrayList<ArrayList<String>>();
+        ArrayList<Integer> dateList = new ArrayList<Integer>();
+        Integer minDate = Integer.valueOf(date1);
+        Integer maxDate = Integer.valueOf(date2);
+        for (int i = 0 ; i < data.size() ; ++i) {
+            if (i == 0) {
+                dateList.add(0);
+            }
+            else {
+                String tempDateComplete = data.get(i).get(DataSorter.dateColumnIndex);
+                String[] tempArr = tempDateComplete.split("/");
+                String tempDate = tempArr[0];
+                dateList.add(Integer.valueOf(tempDate));
+            }
+        }
+        for (int i = 1 ; i < data.size() ; ++i) {
+            if ((dateList.get(i) >= minDate) && (dateList.get(i) < maxDate)) {
+                newData.add(data.get(i));
+            }
+        }
+        return newData;
+    }
+
 }

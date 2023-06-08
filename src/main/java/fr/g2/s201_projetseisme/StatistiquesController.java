@@ -45,6 +45,19 @@ public class StatistiquesController extends Controller implements Initializable 
     @FXML
     private CategoryAxis lineChartXAxis;
 
+    @FXML
+    public void periodChoiceBoxChanged() {
+        String initDates = periodChoiceBox.getValue();
+        String[] tempArr = initDates.split(" - ");
+        String initDate1 = tempArr[0];
+        String initDate2 = tempArr[1];
+        ArrayList<ArrayList<String>> sortedData = new ArrayList<ArrayList<String>>();
+        sortedData = DataCalcul.initDataBetween(DataSorter.data, initDate1, initDate2);
+
+        //Initialization du PieChart
+        pieChartData = DataCalcul.initPieChartData(sortedData);
+        pieChart.setData(pieChartData);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -52,16 +65,34 @@ public class StatistiquesController extends Controller implements Initializable 
 
         if (DataSorter.data != null) {
 
-            //Initialization des ChoiceBoxes
-            ArrayList<String> periodChoiceBoxList = new ArrayList<String>();
-            periodChoiceBoxList = DataCalcul.initChoiceBoxItems(DataSorter.data);
-            for (String str : periodChoiceBoxList) {
-                periodChoiceBox.getItems().add(str);
+            if (!(DataSorter.data.isEmpty())) {
+
+                //Initialization des ChoiceBoxes
+                ArrayList<String> periodChoiceBoxList = new ArrayList<String>();
+                periodChoiceBoxList = DataCalcul.initChoiceBoxItems(DataSorter.data);
+                for (String str : periodChoiceBoxList) {
+                    periodChoiceBox.getItems().add(str);
+                }
+                periodChoiceBox.setValue(periodChoiceBoxList.get(0));
+                periodChoiceBox.setOnAction(actionEvent -> {
+                    periodChoiceBoxChanged();
+                });
+
+                //Initialization de data en fonction des ChoiceBoxes
+                String initDates = periodChoiceBox.getValue();
+                String[] tempArr = initDates.split(" - ");
+                String initDate1 = tempArr[0];
+                String initDate2 = tempArr[1];
+                ArrayList<ArrayList<String>> sortedData = new ArrayList<ArrayList<String>>();
+                sortedData = DataCalcul.initDataBetween(DataSorter.data, initDate1, initDate2);
+
+                //Initialization du PieChart
+                pieChartData = DataCalcul.initPieChartData(sortedData);
+                pieChart.setData(pieChartData);
+
             }
 
-            //Initialization du PieChart
-            pieChartData = DataCalcul.initPieChartData(DataSorter.data);
-            pieChart.setData(pieChartData);
+
         }
 
         //Exemple de remplissage du barChart
