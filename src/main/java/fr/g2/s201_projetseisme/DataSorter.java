@@ -4,19 +4,12 @@ import java.util.ArrayList;
 
 public class DataSorter {
 
+    public static ArrayList<ArrayList<String>> data;
+
     public static int dateColumnIndex;
     public static int regionColumnIndex;
     public static int latitudeColumnIndex;
     public static int longitudeColumnIndex;
-
-    public static void printData(ArrayList<ArrayList<String>> data) {
-        for (int i = 0 ; i < data.size() ; ++i) {
-            for (String str : data.get(i)) {
-                System.out.print(str + " ");
-            }
-            System.out.println();
-        }
-    }
 
     public static void initDateColumnIndex(ArrayList<ArrayList<String>> data) {
         for (int i = 0 ; i < data.get(0).size() ; ++i) {

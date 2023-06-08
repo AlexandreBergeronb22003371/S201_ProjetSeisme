@@ -24,13 +24,12 @@ public class AccueilController extends Controller implements Initializable {
     @FXML
     private Label pathLabel;
 
-    public static ArrayList<ArrayList<String>> data;
+
 
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        data = new ArrayList<ArrayList<String>>();
         if (pathString != "aucun") {
             pathLabel.setText(pathString);
             pathLabel.setStyle("-fx-text-fill: green");
@@ -43,6 +42,7 @@ public class AccueilController extends Controller implements Initializable {
     }
 
     public void chooseFile() {
+        DataSorter.data = new ArrayList<ArrayList<String>>();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Sélectionnez un fichier");
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers CSV", "*.csv"));
@@ -64,15 +64,15 @@ public class AccueilController extends Controller implements Initializable {
                     for (String tempStr : tempArr) {
                         tempInsideArr.add(tempStr);
                     }
-                    data.add(tempInsideArr);
+                    DataSorter.data.add(tempInsideArr);
                 }
 
                 //Initialisation des index importants
 
-                DataSorter.initDateColumnIndex(data);
-                DataSorter.initRegionColumnIndex(data);
-                DataSorter.initLatitudeColumnIndex(data);
-                DataSorter.initLongitudeColumnIndex(data);
+                DataSorter.initDateColumnIndex(DataSorter.data);
+                DataSorter.initRegionColumnIndex(DataSorter.data);
+                DataSorter.initLatitudeColumnIndex(DataSorter.data);
+                DataSorter.initLongitudeColumnIndex(DataSorter.data);
 
             } catch (IOException e) {
                 System.out.println("Erreur lors de la lecture du fichier : " + e.getMessage());
@@ -82,7 +82,7 @@ public class AccueilController extends Controller implements Initializable {
             System.out.println("Aucun fichier sélectionné.");
             pathLabel.setText(pathString);
             pathLabel.setStyle("-fx-text-fill: red");
-            data.clear();
+            DataSorter.data.clear();
         }
     }
 }

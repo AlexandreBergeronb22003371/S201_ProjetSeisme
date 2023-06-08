@@ -92,26 +92,15 @@
                   <Insets top="10.0" />
                </padding>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0" spacing="100.0">
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0">
                <children>
                   <HBox alignment="CENTER">
-                     <children>
-                        <Label prefHeight="18.0" prefWidth="203.0" text="Sélectionnez la période :" />
-                        <ChoiceBox prefWidth="150.0" />
-                     </children>
                      <padding>
                         <Insets left="20.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER">
-                     <children>
-                        <Label prefHeight="18.0" prefWidth="196.0" text="Sélectionnez la région :" />
-                        <ChoiceBox prefWidth="150.0" />
-                     </children>
-                     <padding>
-                        <Insets right="20.0" />
-                     </padding>
-                  </HBox>
+                  <Label prefHeight="18.0" prefWidth="203.0" text="Sélectionnez la période :" />
+                  <ChoiceBox fx:id="periodChoiceBox" prefWidth="150.0" />
                </children>
                <padding>
                   <Insets top="20.0" />
@@ -122,7 +111,7 @@
                   <Insets top="20.0" />
                </padding>
                <children>
-                  <LineChart fx:id="lineChart" animated="false" title="Nombre de séismes par années (villes)">
+                  <LineChart fx:id="lineChart" animated="false" title="Nombre de séismes par années (régions)">
                     <xAxis>
                       <CategoryAxis fx:id="lineChartXAxis" label="Années" side="BOTTOM" />
                     </xAxis>
@@ -135,7 +124,7 @@
             <HBox spacing="10.0">
                <children>
                   <PieChart fx:id="pieChart" animated="false" legendVisible="false" title="Nombre de séismes par années" />
-                  <BarChart fx:id="barChart" animated="false" legendVisible="false" title="Nombre de séismes par villes">
+                  <BarChart fx:id="barChart" animated="false" legendVisible="false" title="Nombre de séismes par régions">
                     <xAxis>
                       <CategoryAxis fx:id="barChartXAxis" label="Villes" side="BOTTOM" />
                     </xAxis>

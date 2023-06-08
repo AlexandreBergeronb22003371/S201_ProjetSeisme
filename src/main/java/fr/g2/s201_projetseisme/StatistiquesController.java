@@ -17,6 +17,10 @@ import java.util.ResourceBundle;
 
 public class StatistiquesController extends Controller implements Initializable {
 
+    //Choice Boxes
+
+
+
     //barChart
     @FXML
     private BarChart<String, Float> barChart;
@@ -51,11 +55,12 @@ public class StatistiquesController extends Controller implements Initializable 
         barChart.getData().add(barChartData);
 
         //Exemple de remplissage du pieChart
-        pieChartData = FXCollections.observableArrayList(
-                new PieChart.Data("2000", 10),
-                new PieChart.Data("2001", 10),
-                new PieChart.Data("2002", 10)
-        );
+        //pieChartData = FXCollections.observableArrayList(
+        //        new PieChart.Data("2000", 10),
+        //        new PieChart.Data("2001", 10),
+        //        new PieChart.Data("2002", 10)
+        //);
+        pieChartData = DataCalcul.initPieChartData(DataSorter.data);
         pieChart.setData(pieChartData);
 
         //Exemple de remplissage du lineChart
