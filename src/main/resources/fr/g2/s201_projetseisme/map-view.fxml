@@ -9,13 +9,24 @@
 <?import com.gluonhq.maps.MapView?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.g2.s201_projetseisme.MapController">
-    <left>
+    <center>
         <VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:id="vbox">
             <children>
                 <MapView fx:id="mapView" prefWidth="640" prefHeight="480" />
             </children>
         </VBox>
-    </left>
+    </center>
+    <bottom>
+        <GridPane alignment="CENTER" prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: #B06B3D;">
+            <children>
+                <Label text="Latitude : " />
+                <TextField fx:id="txtlatitude" GridPane.columnIndex="1"/>
+                <Label text="Longitude : " GridPane.rowIndex="1"/>
+                <TextField fx:id="txtlongitude" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Button fx:id="button_map" text="Entrer" GridPane.columnIndex="1" GridPane.rowIndex="2" onAction="#traceCliked"/>
+            </children>
+        </GridPane>
+    </bottom>
     <top>
         <VBox prefHeight="47.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>
