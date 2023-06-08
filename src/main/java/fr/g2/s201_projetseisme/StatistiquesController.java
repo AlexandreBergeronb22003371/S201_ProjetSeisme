@@ -57,6 +57,10 @@ public class StatistiquesController extends Controller implements Initializable 
         //Initialization du PieChart
         pieChartData = DataCalcul.initPieChartData(sortedData);
         pieChart.setData(pieChartData);
+
+        //Initialization du BarChart
+        barChartData = DataCalcul.initBarChartData(sortedData);
+        barChart.getData().add(barChartData);
     }
 
     @Override
@@ -90,24 +94,22 @@ public class StatistiquesController extends Controller implements Initializable 
                 pieChartData = DataCalcul.initPieChartData(sortedData);
                 pieChart.setData(pieChartData);
 
+                //Initialization du BarChart
+                barChartData = DataCalcul.initBarChartData(sortedData);
+                barChart.getData().add(barChartData);
+
             }
 
 
         }
 
         //Exemple de remplissage du barChart
-        barChartData = new XYChart.Series<>();
-        barChartData.getData().add(new XYChart.Data("Ville 1",10));
-        barChartData.getData().add(new XYChart.Data("Ville 2",10));
-        barChartData.getData().add(new XYChart.Data("Ville 3",10));
-        barChart.getData().add(barChartData);
+        //barChartData = new XYChart.Series<>();
+        //barChartData.getData().add(new XYChart.Data("Ville 1",10));
+        //barChartData.getData().add(new XYChart.Data("Ville 2",10));
+        //barChartData.getData().add(new XYChart.Data("Ville 3",10));
+        //barChart.getData().add(barChartData);
 
-        //Exemple de remplissage du pieChart
-        //pieChartData = FXCollections.observableArrayList(
-        //        new PieChart.Data("2000", 10),
-        //        new PieChart.Data("2001", 10),
-        //        new PieChart.Data("2002", 10)
-        //);
 
 
         //Exemple de remplissage du lineChart

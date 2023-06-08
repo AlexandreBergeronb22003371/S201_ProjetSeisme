@@ -3,6 +3,7 @@ package fr.g2.s201_projetseisme;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -100,4 +101,41 @@ public class DataCalcul {
         return newData;
     }
 
+
+    public static XYChart.Series<String, Float> initBarChartData(ArrayList<ArrayList<String>> data) {
+        XYChart.Series<String, Float> barChartData = new XYChart.Series<>();
+        ArrayList<String> regionList = new ArrayList<String>();
+        ArrayList<String> distinctRegionList = new ArrayList<String>();
+        ArrayList<Integer> countList = new ArrayList<>();
+        for (int i = 1 ; i < data.size() ; ++i) {
+            String tempData = data.get(i).get(DataSorter.regionColumnIndex);
+            if (tempData.length() < 10) {
+                regionList.add(tempData);
+            }
+            else {
+                tempData = tempData.substring(0, 10);
+                regionList.add(tempData);
+            }
+        }
+        for (String str : regionList) {
+            if (!(distinctRegionList.contains(str))) {
+                distinctRegionList.add(str);
+            }
+        }
+        for (String str : distinctRegionList) {
+            countList.add(0);
+        }
+        for (int i = 0 ; i < distinctRegionList.size() ; ++i) {
+            for (String str : regionList) {
+                if (str.equals(distinctRegionList.get(i))) {
+                    int tempInt = countList.get(i);
+                    countList.set(i, tempInt+1);
+                }
+            }
+        }
+        for (int i = 0 ; i < distinctRegionList.size() ; ++i) {
+            barChartData.getData().add(new XYChart.Data(distinctRegionList.get(i), countList.get(i)));
+        }
+        return barChartData;
+    }
 }
