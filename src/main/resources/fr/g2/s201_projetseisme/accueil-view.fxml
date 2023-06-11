@@ -79,39 +79,62 @@
    <center>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                <children>
                   <Label fx:id="centreLabel" text="KAMA Séisme">
                      <font>
-                        <Font size="29.0" />
+                        <Font name="System Bold" size="45.0" />
                      </font>
+                     <HBox.margin>
+                        <Insets top="35.0" />
+                     </HBox.margin>
                   </Label>
                </children>
             </HBox>
+            <Label text="L'application de traitement de données sismiques">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+            </Label>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
                <children>
                   <Label text="Fichier sélectionné :">
                      <font>
-                        <Font size="15.0" />
+                        <Font size="30.0" />
                      </font></Label>
-                  <Label fx:id="pathLabel" alignment="CENTER" contentDisplay="CENTER" prefWidth="108.0" text="aucun" textFill="RED">
+                  <Label fx:id="pathLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="209.0" text="aucun" textFill="RED" textOverrun="LEADING_ELLIPSIS">
                      <font>
-                        <Font size="15.0" />
+                        <Font name="System Italic" size="30.0" />
                      </font></Label>
                </children>
+               <VBox.margin>
+                  <Insets top="90.0" />
+               </VBox.margin>
             </HBox>
             <Button fx:id="importButton" mnemonicParsing="false" onAction="#chooseFile" text="Selectionner">
                <font>
-                  <Font size="15.0" />
+                  <Font size="22.0" />
                </font></Button>
          </children>
       </VBox>
    </center>
    <bottom>
-      <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="BOTTOM_CENTER">
+      <VBox alignment="BOTTOM_CENTER" BorderPane.alignment="BOTTOM_CENTER">
          <children>
             <Separator prefWidth="200.0" />
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
+            <HBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #2B0E00;">
+               <children>
+                  <ImageView fitHeight="46.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icon.png" />
+                     </image>
+                  </ImageView>
+                  <Label contentDisplay="CENTER" text="© 2023 KAMA Séisme - Réalisé par K.A.M.A." textFill="#d0d0d0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+               </children></HBox>
          </children>
       </VBox>
    </bottom>
