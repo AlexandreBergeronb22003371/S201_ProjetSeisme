@@ -14,7 +14,13 @@ import java.io.IOException;
  */
 public class MainApp extends Application {
 
+    /**
+     * scene est une Scene accessible par toutes les classes. C'est elle qui est contenue dans stage et elle est modifiable afin de naviguer entre plusieurs onglets
+     */
     public static Scene scene;
+    /**
+     *  stage est une Stage accessible par toutes les calsses. C'est la fenêtre qui contient tout le contenu de l'application.
+     */
     public static Stage stage;
 
     /**
