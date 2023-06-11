@@ -1,9 +1,6 @@
 package fr.g2.s201_projetseisme;
 
-import javafx.scene.chart.XYChart;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Cette classe permet d'initialiser tous les indexes importants utiles à la recherche de données dans DataCalcul.
