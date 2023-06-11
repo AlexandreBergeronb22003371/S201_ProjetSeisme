@@ -13,35 +13,76 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class AccueilController extends Controller implements Initializable {
 
     @FXML
-    Button importButton;
+    private Button importButton;
+
+    @FXML
+    private Label pathLabel;
+
+
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        if (pathString != "aucun") {
+            pathLabel.setText(pathString);
+            pathLabel.setStyle("-fx-text-fill: green");
+        }
+        else {
+            pathString = "aucun";
+            pathLabel.setText(pathString);
+            pathLabel.setStyle("-fx-text-fill: red");
+        }
     }
 
     public void chooseFile() {
+        DataSorter.data = new ArrayList<ArrayList<String>>();
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Sélectionner un fichier");
+        fileChooser.setTitle("Sélectionnez un fichier");
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers CSV", "*.csv"));
         Stage stage = (Stage) MainApp.stage;
         java.io.File selectedFile = fileChooser.showOpenDialog(stage);
 
         if (selectedFile != null) {
-            System.out.println("Fichier sélectionné : " + selectedFile.getAbsolutePath());
+            pathString = selectedFile.getAbsolutePath();
+            System.out.println("Fichier sélectionné : " + pathString);
+            pathLabel.setText(pathString);
+            pathLabel.setStyle("-fx-text-fill: green");
             try (BufferedReader reader = new BufferedReader(new FileReader(selectedFile))) {
                 String line;
+                String[] tempArr;
+                String delimiter = ",";
                 while ((line = reader.readLine()) != null) {
-                    System.out.println(line);
+                    tempArr = line.split(delimiter);
+                    ArrayList<String> tempInsideArr = new ArrayList<String>();
+                    for (String tempStr : tempArr) {
+                        tempInsideArr.add(tempStr);
+                    }
+                    DataSorter.data.add(tempInsideArr);
                 }
+
+                //Initialisation des index importants
+
+                DataSorter.initDateColumnIndex(DataSorter.data);
+                DataSorter.initRegionColumnIndex(DataSorter.data);
+                DataSorter.initLatitudeColumnIndex(DataSorter.data);
+                DataSorter.initLongitudeColumnIndex(DataSorter.data);
+
             } catch (IOException e) {
                 System.out.println("Erreur lors de la lecture du fichier : " + e.getMessage());
             }
         } else {
+            pathString = "aucun";
             System.out.println("Aucun fichier sélectionné.");
+            pathLabel.setText(pathString);
+            pathLabel.setStyle("-fx-text-fill: red");
+            DataSorter.data.clear();
         }
     }
 }

@@ -27,6 +27,7 @@ public class Controller {
     private Button statistiquesButton;
     @FXML
     private Button mapButton;
+    public static String pathString = "aucun";
 
     @FXML
     public void mapButtonClicked() throws IOException {
