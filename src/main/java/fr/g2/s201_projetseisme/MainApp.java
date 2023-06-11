@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.beans.binding.Binding;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,6 +22,7 @@ public class MainApp extends Application {
         stage.setScene(scene);
         stage.setResizable(false);
         MainApp.stage = stage;
+        stage.getIcons().add(new Image(this.getClass().getResourceAsStream("icon.png")));
         stage.show();
     }
 
