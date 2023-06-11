@@ -111,7 +111,7 @@
                   <Insets top="20.0" />
                </padding>
                <children>
-                  <LineChart fx:id="lineChart" animated="false" title="Nombre de séismes par années (régions)">
+                  <LineChart fx:id="lineChart" animated="false" legendVisible="false" title="Nombre de séismes par années">
                     <xAxis>
                       <CategoryAxis fx:id="lineChartXAxis" label="Années" side="BOTTOM" />
                     </xAxis>

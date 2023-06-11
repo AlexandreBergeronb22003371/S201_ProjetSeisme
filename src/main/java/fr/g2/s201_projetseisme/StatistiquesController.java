@@ -64,11 +64,9 @@ public class StatistiquesController extends Controller implements Initializable 
         barChart.getData().add(barChartData);
 
         //Initialization du LineChart
-        ArrayList<XYChart.Series<String, Float>> lineChartDatas = DataCalcul.initLineChartDatas(sortedData);
+        XYChart.Series<String, Float> lineChartData = DataCalcul.initLineChartData(sortedData);
         lineChart.getData().clear();
-        for (int i = 0 ; i < lineChartDatas.size() ; ++i) {
-            lineChart.getData().add(lineChartDatas.get(i));
-        }
+        lineChart.getData().add(lineChartData);
     }
 
     @Override
@@ -108,14 +106,12 @@ public class StatistiquesController extends Controller implements Initializable 
                 barChart.getData().add(barChartData);
 
                 //Initialization du LineChart
-                ArrayList<XYChart.Series<String, Float>> lineChartDatas = DataCalcul.initLineChartDatas(sortedData);
+                XYChart.Series<String, Float> lineChartData = DataCalcul.initLineChartData(sortedData);
                 lineChart.getData().clear();
-                for (int i = 0 ; i < lineChartDatas.size() ; ++i) {
-                    lineChart.getData().add(lineChartDatas.get(i));
+                lineChart.getData().add(lineChartData);
                 }
             }
 
 
         }
     }
-}

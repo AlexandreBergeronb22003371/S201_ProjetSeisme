@@ -19,7 +19,7 @@ public class MainApp extends Application {
      */
     public static Scene scene;
     /**
-     *  stage est une Stage accessible par toutes les calsses. C'est la fenêtre qui contient tout le contenu de l'application.
+     *  stage est une Stage accessible par toutes les classes. C'est la fenêtre qui contient tout le contenu de l'application.
      */
     public static Stage stage;
 
