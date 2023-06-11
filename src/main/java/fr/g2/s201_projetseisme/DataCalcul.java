@@ -10,8 +10,15 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Cette classe va
+ */
 public class DataCalcul {
-
+    /**
+     *
+     * @param data Cette fonction va initialiser
+     * @return ObservableList<PieChart.Data> qui est
+     */
     public static ObservableList<PieChart.Data> initPieChartData(ArrayList<ArrayList<String>> data) {
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
         ArrayList<String> dateList = new ArrayList<String>();
@@ -45,6 +52,11 @@ public class DataCalcul {
         return pieChartData;
     }
 
+    /**
+     *
+     * @param data est une liste de liste de String
+     * @return une liste de nombres entiers
+     */
     public static ArrayList<Integer> initDatesInt(ArrayList<ArrayList<String>> data) {
         ArrayList<String> dateList = new ArrayList<String>();
         ArrayList<String> distinctDateList = new ArrayList<String>();
@@ -67,6 +79,11 @@ public class DataCalcul {
         return distinctDateListInt;
     }
 
+    /**
+     *
+     * @param data est une liste de liste de String
+     * @return une liste de String
+     */
     public static ArrayList<String> initChoiceBoxItems(ArrayList<ArrayList<String>> data) {
         ArrayList<String> choiceBoxItems = new ArrayList<String>();
         ArrayList<Integer> dates = new ArrayList<Integer>();
@@ -79,6 +96,13 @@ public class DataCalcul {
         return choiceBoxItems;
     }
 
+    /**
+     *
+     * @param data est une liste de liste de String
+     * @param date1 est une String
+     * @param date2 est une String
+     * @return est une liste de liste de String
+     */
     public static ArrayList<ArrayList<String>> initDataBetween(ArrayList<ArrayList<String>> data, String date1, String date2) {
         ArrayList<ArrayList<String>> newData = new ArrayList<ArrayList<String>>();
         ArrayList<Integer> dateList = new ArrayList<Integer>();
@@ -103,7 +127,11 @@ public class DataCalcul {
         return newData;
     }
 
-
+    /**
+     *
+     * @param data est une liste de liste de String
+     * @return XYChart.Series<String, Float>
+     */
     public static XYChart.Series<String, Float> initBarChartData(ArrayList<ArrayList<String>> data) {
         XYChart.Series<String, Float> barChartData = new XYChart.Series<>();
         ArrayList<String> regionList = new ArrayList<String>();
@@ -141,7 +169,11 @@ public class DataCalcul {
         return barChartData;
     }
 
-
+    /**
+     *
+     * @param data est une liste de liste de String
+     * @return  ArrayList<XYChart.Series<String, Float>>
+     */
     public static ArrayList<XYChart.Series<String, Float>> initLineChartDatas(ArrayList<ArrayList<String>> data) {
 
         ArrayList<XYChart.Series<String, Float>> lineChartDatas = new ArrayList<XYChart.Series<String, Float>>();
