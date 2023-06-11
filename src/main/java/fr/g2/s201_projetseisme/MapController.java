@@ -21,13 +21,19 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
-
+/**
+ * Ceci est la classe qui va se charger de gérer toutes les fonctionnalités liées au graphique de la page Map (map-view.fxml). C'est sa classe controller.
+ */
 public class MapController extends Controller implements Initializable {
 
     @FXML
     public MapView mapView;
 
+    /**
+     * Cette fonction va initialiser des variables, méthodes ou encore des objets qui reprendront les valeurs données ici à chaque appel de cette classe.
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         MapPoint mapPoint = new MapPoint(46.227638, 2.213749);
@@ -45,6 +51,9 @@ public class MapController extends Controller implements Initializable {
         }
     }
 
+    /**
+     *
+     */
     public class CustomCircleMarkerLayer extends MapLayer {
 
         private final MapPoint mapPoint;
@@ -64,6 +73,9 @@ public class MapController extends Controller implements Initializable {
         }
     }
 
+    /**
+     *
+     */
     public void mapPointTrace(){
 
         for (int i = 1 ; i < DataSorter.data.size() ; ++i) {
