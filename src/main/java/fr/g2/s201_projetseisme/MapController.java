@@ -12,7 +12,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Ceci est la classe qui va se charger de gérer toutes les fonctionnalités liées au graphique de la page Map (map-view.fxml). C'est sa classe controller.
+ * Ceci est la classe qui va se charger de gérer toutes les fonctionnalités liées à la mapView de la page Map (map-view.fxml). C'est sa classe controller.
  */
 public class MapController extends Controller implements Initializable {
 
@@ -20,7 +20,9 @@ public class MapController extends Controller implements Initializable {
     public MapView mapView;
 
     /**
-     * Cette fonction va initialiser des variables, méthodes ou encore des objets qui reprendront les valeurs données ici à chaque appel de cette classe.
+     * Cette fonction va initialiser le placement visuel de la map et le zoom par défaut.
+     * Si un fichier csv est sélectionné, alors elle initialise aussi les points correspondant à chaque séisme.
+     * Sinon, la map s'affiche sans points.
      * @param url
      * @param resourceBundle
      */
@@ -42,19 +44,31 @@ public class MapController extends Controller implements Initializable {
     }
 
     /**
-     *
+     * CustomCircleMarkerLayer est une sous classe qui contient les attributs et fonctions nécessaires au traçage de points sur la mapView
      */
     public class CustomCircleMarkerLayer extends MapLayer {
-
+        /**
+         * mapPoint est un point à afficher sur une MapView.
+         */
         private final MapPoint mapPoint;
+        /**
+         * circle est un cercle qui permet l'affichage d'un point sur une MapView.
+         */
         private final Circle circle;
 
+        /**
+         * Permet la création d'un cercle de couleur rouge en fonction de mapPoint
+         * @param mapPoint
+         */
         public CustomCircleMarkerLayer(MapPoint mapPoint) {
             this.mapPoint = mapPoint;
             this.circle = new Circle(5, Color.RED);
             this.getChildren().add(circle);
         }
 
+        /**
+         * Permet le placement du point au bon endroit sur la MapView
+         */
         @Override
         protected void layoutLayer() {
             Point2D point2d = getMapPoint(mapPoint.getLatitude(), mapPoint.getLongitude());
@@ -64,7 +78,7 @@ public class MapController extends Controller implements Initializable {
     }
 
     /**
-     *
+     * Cette fonction trace chaque point un par un en fonction du contenu de DataSorter.data.
      */
     public void mapPointTrace(){
 
