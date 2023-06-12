@@ -10,34 +10,51 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+/**
+ * Cette classe est le Controller de la vue statistiques-view.fxml. Elle contient toutes les fonctions relatives à l'activation de boutons sur cette vue.
+ */
 public class StatistiquesController extends Controller implements Initializable {
 
     //Choice Boxes
+    /**
+     * periodChoiceBox est la ChoiceBox qui contient les choix de périodes à sélectionner pour gérer les données classées par années.
+     */
     @FXML
     private ChoiceBox<String> periodChoiceBox;
 
     //barChart
+    /**
+     * barChart est le graphique en barres représentant les nombres de séismes en fonction des régions.
+     */
     @FXML
     private BarChart<String, Float> barChart;
-    @FXML
-    private NumberAxis barChartYAxis;
-    @FXML
-    private CategoryAxis barChartXAxis;
+    /**
+     * barChartData est la série de donnée contenue dans le barChart.
+     */
     private XYChart.Series<String, Float> barChartData;
 
     //pieChart
+    /**
+     * pieChart est le graphique en secteurs représentant les nombres de séismes en fonction des années.
+     */
     @FXML
     private PieChart pieChart;
+    /**
+     * pieChartData est la liste contenant les données à afficher dans le pieChart.
+     */
     private ObservableList<PieChart.Data> pieChartData;
 
     //lineChart
+    /**
+     * lineChart est le graphique présentant une courbe des nombres de séismes en fonction des années.
+     */
     @FXML
     private LineChart lineChart;
-    @FXML
-    private NumberAxis lineChartYAxis;
-    @FXML
-    private CategoryAxis lineChartXAxis;
 
+    /**
+     * periodChoiceBoxChanged() est la fonction activée lorsque la periodChoiceBox est "onAction".
+     * Elle permet l'actualisation des données dans les graphiques en fonction du choix déterminé dans la periodChoiceBox.
+     */
     @FXML
     public void periodChoiceBoxChanged() {
         String initDates = periodChoiceBox.getValue();
@@ -62,6 +79,13 @@ public class StatistiquesController extends Controller implements Initializable 
         lineChart.getData().add(lineChartData);
     }
 
+    /**
+     * Cette fonction initialise l'affichage des graphiques en fonction du contenu de DataSorter.data : si DataSorter.data est vide ou nulle,
+     * les graphiques seront affichés mais vides. Sinon, les graphiques affichent les données de DataSorter.data dont la date convient
+     * à la fourchette sélectionnée dans periodChoiceBox : par défaut, c'est le premier choix qui est sélectionné.
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
