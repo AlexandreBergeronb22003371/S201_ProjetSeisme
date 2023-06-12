@@ -14,19 +14,22 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-
+/**
+ * Cette classe est le Controller de la vue accueil-view.fxml. Elle contient toutes les fonctions relatives à l'activation de boutons sur cette vue.
+ */
 public class AccueilController extends Controller implements Initializable {
-
-    @FXML
-    private Button importButton;
-
+    /**
+     * pathLabel est le label qui affiche la String Controller.pathString.
+     * Il est initialisé dans la fonction initialize(...) et est modifié dans la chooseFile() lors de la sélection (ou déselection) d'un fichier
+     */
     @FXML
     private Label pathLabel;
 
-
-
-
-
+    /**
+     * Elle initialise le label pathLabel lors du lancement de la fenêtre.
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (pathString != "aucun") {
@@ -40,6 +43,13 @@ public class AccueilController extends Controller implements Initializable {
         }
     }
 
+    /**
+     * Cette fonction exécute tout le code relatif à la lecture d'un fichier csv.
+     * Après lecture et placement des données du csv dans le ArrayList<ArrayList<String>> DataSorter.data,
+     * elle initialise les indexes importants attributs de la classe DataSorter.
+     * Si aucun fichier n'est sélectionné, elle vide le contenu de DataSorter.data et
+     * réinitialise la String Controller.pathString ainsi que le label pathLabel la contenant.
+     */
     public void chooseFile() {
         DataSorter.data = new ArrayList<ArrayList<String>>();
         FileChooser fileChooser = new FileChooser();
