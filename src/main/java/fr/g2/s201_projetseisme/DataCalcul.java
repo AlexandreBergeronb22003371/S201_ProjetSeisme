@@ -85,10 +85,10 @@ public class DataCalcul {
     public static ArrayList<String> initChoiceBoxItems(ArrayList<ArrayList<String>> data) {
         ArrayList<String> choiceBoxItems = new ArrayList<String>();
         ArrayList<Integer> dates = new ArrayList<Integer>();
-        dates = initDatesInt(DataSorter.data);
+        dates = initDatesInt(data);
         Integer minDate = dates.get(0);
         Integer maxDate = dates.get(dates.size()-1);
-        for (int i = minDate ; i < maxDate ; i += 10) {
+        for (int i = minDate ; i <= maxDate ; i += 10) {
             choiceBoxItems.add(i + " - " + (i+10));
         }
         return choiceBoxItems;
