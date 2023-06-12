@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Cette classe va
+ * Cette classe contient toutes les fonctions nécessaires à l'initialisation des données de chaque graphique de la vue relative aux Statistiques.
  */
 public class DataCalcul {
     /**
-     *
-     * @param data Cette fonction va initialiser
-     * @return ObservableList<PieChart.Data> qui est
+     * Cette fonction initialise les données à afficher dans le pieChart.
+     * @param data qui fait référence à DataSorter.data
+     * @return pieChartData qui est la liste de données à afficher sur le graphique
      */
     public static ObservableList<PieChart.Data> initPieChartData(ArrayList<ArrayList<String>> data) {
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
@@ -51,9 +51,9 @@ public class DataCalcul {
     }
 
     /**
-     *
-     * @param data est une liste de liste de String
-     * @return une liste de nombres entiers
+     * Cette fonction initialise une liste de dates (int) distinctes.
+     * @param data qui fait référence à DataSorter.data.
+     * @return distinctDateListInt qui est la liste des dates distinctes contenues dans data.
      */
     public static ArrayList<Integer> initDatesInt(ArrayList<ArrayList<String>> data) {
         ArrayList<String> dateList = new ArrayList<String>();
@@ -78,9 +78,9 @@ public class DataCalcul {
     }
 
     /**
-     *
-     * @param data est une liste de liste de String
-     * @return une liste de String
+     * Cette fonction initialise la liste des choix (String) à mettre dans la periodChoiceBox.
+     * @param data qui fait référence à DataSorter.data.
+     * @return choiceBoxItems une liste de String à mettre dans une ChoiceBox
      */
     public static ArrayList<String> initChoiceBoxItems(ArrayList<ArrayList<String>> data) {
         ArrayList<String> choiceBoxItems = new ArrayList<String>();
@@ -95,11 +95,11 @@ public class DataCalcul {
     }
 
     /**
-     *
-     * @param data est une liste de liste de String
-     * @param date1 est une String
-     * @param date2 est une String
-     * @return est une liste de liste de String
+     * Cette fonction initialise une nouvelle liste de données utilisable pour les graphiques.
+     * @param data qui fait référence à DataSorter.data.
+     * @param date1 est une String représentant la première date de la fourchette.
+     * @param date2 est une String représentant la seconde date de la fourchette.
+     * @return newData la partie de data contenant uniquement les séismes dont la date est comprise dans la fourchette de dates.
      */
     public static ArrayList<ArrayList<String>> initDataBetween(ArrayList<ArrayList<String>> data, String date1, String date2) {
         ArrayList<ArrayList<String>> newData = new ArrayList<ArrayList<String>>();
@@ -126,9 +126,9 @@ public class DataCalcul {
     }
 
     /**
-     *
-     * @param data est une liste de liste de String
-     * @return XYChart.Series<String, Float>
+     * Cette fonction initialise les données à afficher dans le barChart.
+     * @param data qui fait référence à DataSorter.data
+     * @return barChartData qui est la série de données à afficher sur le graphique
      */
     public static XYChart.Series<String, Float> initBarChartData(ArrayList<ArrayList<String>> data) {
         XYChart.Series<String, Float> barChartData = new XYChart.Series<>();
@@ -168,9 +168,9 @@ public class DataCalcul {
     }
 
     /**
-     *
-     * @param data est une liste de liste de String
-     * @return  ArrayList<XYChart.Series<String, Float>>
+     * Cette fonction initialise les données à afficher dans le lineChart.
+     * @param data qui fait référence à DataSorter.data
+     * @return lineChartData qui est la série de données à afficher sur le graphique
      */
     public static XYChart.Series<String, Float> initLineChartData(ArrayList<ArrayList<String>> data) {
 
