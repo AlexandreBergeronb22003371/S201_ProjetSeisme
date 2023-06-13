@@ -31,7 +31,7 @@ public class MapController extends Controller implements Initializable {
         MapPoint mapPoint = new MapPoint(46.227638, 2.213749);
 
         /* Zoom de 5 */
-        mapView.setZoom(3);
+        mapView.setZoom(5);
 
         /* Centre la carte sur le point */
         mapView.flyTo(0, mapPoint, 0.1);
